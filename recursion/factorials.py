@@ -8,12 +8,19 @@
 # print(factorial(3))
 # print(factorial(4))
 
+# Assumption: user has keyed in an integer
 def factorial(n):
-    if n == 1:
-        return n
+    try:
+        if n < 0:
+            print("enter a positive integer please")
+            return False
+        if n == 0 or n == 1:
+            return n
+        return n * factorial(n-1)
+    except TypeError:
+        print("enter a positive integer please")
+        return False
 
-    return n * factorial(n-1)
 
-
-print(factorial(3))
+print(factorial(0))
 print(factorial(4))
